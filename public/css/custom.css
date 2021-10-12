@@ -1,0 +1,77 @@
+/* For the function */
+.msf_hide {
+    display: none;
+}
+
+.msf_show {
+    display: block;
+}
+
+.msf_bullet_o {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.msf_bullet_o>div {
+    height: 15px;
+    width: 15px;
+    margin: 20px 10px;
+    border-radius: 100px;
+    z-index: 2;
+}
+
+.msf_bullet {
+    background-color: lightgrey;
+
+}
+
+.msf_bullet_active {
+    background-color: darkgrey !important;
+}
+
+.msf_line {
+    opacity: 0.3;
+    background: lightgrey;
+    height: 3px;
+    width: 70px;
+    display: block;
+    left: 50%;
+    margin-top: -29px;
+    margin-left: -35px;
+    position: absolute;
+    z-index: 1;
+}
+
+.form_wrapper {
+    /* min-width: 300px;
+    position: absolute;
+    top: 50%; */
+    /* margin-top: -160px; */
+}
+
+fieldset {
+    /* display: flex; */
+    /* flex-flow: row wrap; */
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 30px;
+    border-radius: 0px;
+    border: none;
+    padding: 10px 20px !important;
+}
+/* 
+input {
+    display: block;
+    width: 100%;
+    height: 20px;
+    margin: 15px 0px;
+} */
+
+h2 {
+    text-align: center;
+    font-size: 22px;
+    font-family: opensans;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 25px !important;
+}
