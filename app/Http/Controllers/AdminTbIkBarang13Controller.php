@@ -444,5 +444,21 @@
 			return view('admin/identifikasi_kebutuhan/barang/add', $data);
 		} 
 
+		// detail
+		public function getDetail($id) {
+			//Create an Auth
+			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_edit==FALSE) {    
+			  CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+			
+			$data = [];
+			$data['page_title'] = 'Detail Form Identifikasi Barang';
+			$data['row'] = DB::table('tb_ik_barang')->where('id',$id)->first();
+			
+			//Please use cbView method instead view method from laravel
+			// $this->cbView('custom_detail_view',$data);
+			return view('admin/identifikasi_kebutuhan/barang/detail', $data);
+		  }
+
 
 	}
