@@ -70,8 +70,8 @@ input {
 h2 {
     text-align: center;
     font-size: 22px;
-    font-family: opensans;
-    font-weight: 400;
+    /* font-family: opensans; */
+    font-weight: bolder;
     display: block;
     margin-bottom: 25px !important;
 }

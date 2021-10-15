@@ -42,8 +42,8 @@ function msf_btn_next() {
             // nothing happens
         } else {
             if (msf_input_s.value === "") {
-                msf_input_s.style.backgroundColor = "pink";
-                msf_val = false;
+                // msf_input_s.style.backgroundColor = "pink";
+                msf_val = true;
             } else {
                 if (msf_val === false) {} else {
                     msf_val = true;

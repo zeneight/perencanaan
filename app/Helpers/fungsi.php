@@ -216,7 +216,7 @@ function end_modal($save=true, $special="") {
 function form_input($label, $name, $type="text", $width="5", $class="", $attr="", $belakang="") {
     echo '
     <div class="form-group">
-        <label for="'.$name.'" class="col-sm-2 control-label">
+        <label for="'.$name.'" class="col-sm-4 control-label">
         '.$label;
         if (strpos($attr, 'required') !== false) {
             echo '<span class="text-danger" title="This field is required">*</span>';
@@ -249,14 +249,14 @@ function form_api_combobox($label, $name, $data, $width='5', $class="", $attr="r
 function form_start_combobox($label, $name, $width='5', $class="", $attr="required", $tipe="", $placeholder=true) {
     echo '
         <div class="form-group">
-            <label for="'.$name.'" class="col-sm-2 control-label">'.$label;
+            <label for="'.$name.'" class="col-sm-4 control-label">'.$label;
             if(strpos($attr, 'required') !== false) echo '<span class="text-danger" title="This field is required">*</span>';
             echo '
             </label>
             <div class="col-sm-'.$width.'">
                 <select class="form-control '.$class.' '.$tipe.'" id="'.$name.'" name="'.$name.'" '.$attr.'>';
                 if($placeholder==true){
-                    echo '<option value="" selected>** Silahkan Pilih '.$label.' -</option>';
+                    echo '<option value="" selected>- Pilih Salah Satu -</option>';
                 }
 }
 function form_end_combobox($spinner=0) {
@@ -394,8 +394,13 @@ function emptyObj($obj) {
 function form_textarea($label, $name, $class="", $attr="", $val="") {
     echo '
     <div class="form-group">
-        <label for="'.$name.'" class="col-sm-2 control-label">'.$label.'</label>
-        <div class="col-sm-10">
+        <label for="'.$name.'" class="col-sm-4 control-label">'.$label;
+
+        if (strpos($attr, 'required') !== false) {
+            echo '<span class="text-danger" title="This field is required">*</span>';
+        }
+        echo '</label>
+        <div class="col-sm-8">
             <textarea class="form-control compose-textarea '.$class.'" rows="8" name="'.$name.'" id="tes" '.$attr.'>'.$val.'</textarea>
         </div>
     </div>
