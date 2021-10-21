@@ -1,4 +1,7 @@
 <style type="text/css">
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
     .head-text {
         font-size: 20px;
         font-weight: bolder;
@@ -61,6 +64,10 @@
         float: left;
         /* width: 50%; */
     }
+    .column td {
+        padding-left: 10px;
+        background-color: #fff;
+    }
     /* Clear floats after the columns */
     .row:after {
         content: "";
@@ -108,16 +115,23 @@
         /* font-weight: bold; */
         text-decoration: underline;
         font-size: 18px;
-        padding-top: 20px !important;
-        padding-bottom: 5px !important;
+        padding-top: 15px !important;
+        padding-bottom: 8px !important;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        background-color: #fff;
     }
-    small {
+    .absen td small {
         font-weight: 1;
         font-size: 12px;
-        text-decoration: italic;
+        font-style: italic !important;
     }
     .text-center {
         text-align: center;
+    }
+    tr:nth-child(odd){
+        background-color: #e7effd;
+        /* color: #fff; */
     }
 </style>
 <div class="row">
@@ -162,7 +176,7 @@
     <tr>
         <td class="nomor">2.</td>
         <td class="pertanyaan">Tanggal Perubahan</td>
-        <td>{{$laporan['data']->tgl_perubahan}}</td>
+        <td>{!! \Carbon\Carbon::parse($laporan['data']->tgl_perubahan)->format('d/m/Y') !!}</td>
     </tr>
     <tr>
         <td class="text-center subjudul" colspan="3">
@@ -206,13 +220,12 @@
     <tr>
         <td class="nomor">9.</td>
         <td class="pertanyaan">Kode barang (BMN) dan nama barang pada SIMAK BMN/Persediaan. 
-        
         </br>
         <small>Isikan kode barang yang dibutuhkan ini nantinya akan dimasukkan dicatat dengan kode barang apa baik pada SIMAK BMN maupun aplikasi persediaan</small></td>
         <td>
-            <table class="table table-bordered">
+            <table style="width: 100%">
                 <tr>
-                    <td>Kode BMN/Persediaan</td>
+                    <td width="50%">Kode BMN/Persediaan</td>
                     <td>{{$laporan['data']->kode_bmn}}</td>
                 </tr>
                 <tr>
@@ -462,8 +475,11 @@
 
     <tr>
         <td class="nomor">48.</td>
-        <td class="pertanyaan">Catatan Penting</td>
-        <td>{{$laporan['data']->catatan}}</td>
+        <td colspan="2">
+            <b>Catatan Penting</b>
+            <br>
+            {{$laporan['data']->catatan}}
+        </td>
     </tr>
 
     <tr>
@@ -471,7 +487,7 @@
         </td>
     </tr>
     <tr>
-        <td class="nomor"></td>
+        <td class="nomor">49.</td>
         <td class="pertanyaan">Disusun pertama kali tanggal</td>
         <td>{{$laporan['data']->tgl_disusun_pertama}}</td>
     </tr>
