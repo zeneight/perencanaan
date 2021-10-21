@@ -3,6 +3,7 @@
 	use Session;
 	use Request;
 	use DB;
+	use PDF;
 	use CRUDBooster;
 
 	class AdminTbIkBarang13Controller extends \crocodicstudio\crudbooster\controllers\CBController {
@@ -458,7 +459,34 @@
 			//Please use cbView method instead view method from laravel
 			// $this->cbView('custom_detail_view',$data);
 			return view('admin/identifikasi_kebutuhan/barang/detail', $data);
-		  }
+		}
+
+		// laporan
+		public function getLaporanPdf($idnya)
+		{
+			$dt = array();
+			$no = 1;
+			$dt['laporan']['instansi'] = "Dinas Kominfo";
+			$dt['laporan']['tanggal'] = "tanggal";
+
+			$dt['laporan']['data'] = DB::table('tb_ik_barang')
+				->orderBy('id')
+				->where('id', $idnya)
+				->first();
+			
+			// dd($dt['laporan']['data']);
+			// dd(\Carbon\Carbon::now()->diffForHumans());
+
+			if ($dt['laporan']['data'] == null) {
+				return redirect('admin/identifikasi_kebutuhan')->with('status', 'Maaf, Anda tidak dapat membuat laporan ini karena belum ada data di dalam database!');
+			}
+
+			$datatopdf = PDF::loadView('admin.identifikasi_kebutuhan.barang.laporan', $dt)->setPaper('a4', 'portait');
+			// If you want to store the generated pdf to the server then you can use the store function
+			# $pdf->save(storage_path().'_filename.pdf');
+			// Finally, you can download the file using download function
+			return $datatopdf->stream('laporan_identifikasi_kebutuhan_barang_.pdf');
+		}
 
 
 	}
