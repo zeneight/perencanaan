@@ -27,7 +27,7 @@
 
 </style>
 
-<p><a title='Return' href="{{ crudbooster::adminPath('tb_ik_barang13') }}"><i class='fa fa-chevron-circle-left '></i>
+<p><a title='Return' href="{{ crudbooster::adminPath('identifikasi-kebutuhan-barang') }}"><i class='fa fa-chevron-circle-left '></i>
         &nbsp; Kembali</a></p>
 
 <div class="panel panel-default">
