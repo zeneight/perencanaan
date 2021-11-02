@@ -52,7 +52,8 @@
                     {{ form_input("Pejabat Pembuat Komitmen (nama jabatan, bukan orang)", "ppk", "text", 8, "", "required") }}
 
                     {{ form_input("Program (sesuai DIPA)", "program", "text", 8, "", "") }}
-                    {{ form_input("Kegiatan (sesuai DIPA)", "kegiatan", "text", 8, "", "") }}
+                    {{ form_textarea("Kegiatan (sesuai DIPA)", "kegiatan", "", "", "") }}
+                    {{ form_textarea("Sub Kegiatan (sesuai DIPA)", "sub_kegiatan", "", "", "") }}
                     {{ form_textarea("Output (sesuai DIPA)", "output", "", "required", "") }}
                     <hr>
 
@@ -174,7 +175,12 @@
 
                     {{ form_input("Apabila terbatas, jelaskan dan sebutkan nama penyedia yang selama memenuhi kebutuhan barang ini", "keterangan_terbatas", "text", 8, "", "required") }}
                     <hr>
-                    {{ form_input("Kreteria Barang", "kreteria_barang", "text", 8, "", "required") }}
+                    {{ form_start_combobox ("Kreteria Barang", "kreteria_barang", "8", "", "required", "") }}
+                        <option>Produk dalam negeri</option>
+                        <option>Barang impor</option>
+                        <option>Pabrikan</option>
+                        <option>Kerajinan tangan</option>
+                    {{ form_end_combobox() }}
                     {{ form_input("Persyaratan Barang memiliki nilai TKDN tertentu. apabila Ya, Pada kotak 'Lainnya' jelaskan berapa % paling sedikit TKDN", "barang_nilai_tkd", "text", 8, "", "required") }}
                     
                     <hr>
