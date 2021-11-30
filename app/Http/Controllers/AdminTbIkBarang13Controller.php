@@ -54,8 +54,8 @@
 			$this->form[] = ['label'=>'Kode BMN/ Persediaan','name'=>'kode_bmn','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nama BMN/ Persediaan','name'=>'nama_bmn','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nama Barang','name'=>'nama_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jelaskan kriteria INDIKATOR KINERJA/SPESIFIKASI KINERJA yang dibutuhkan untuk pengadaan barang ini','name'=>'kreteria','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jelaskan fungsi/kegunaan barang tersebut','name'=>'fungsi_barang','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jelaskan kriteria INDIKATOR KINERJA/SPESIFIKASI KINERJA yang dibutuhkan untuk pengadaan barang ini','name'=>'kreteria','type'=>'textarea','validation'=>'required|min:1','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jelaskan fungsi/kegunaan barang tersebut','name'=>'fungsi_barang','type'=>'textarea','validation'=>'required|min:1','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jelaskan ukuran/kapasitas barang tersebut','name'=>'ukuran_barang','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jelaskan macam garansi yang dibutuhkan/disyaratkan untuk pengadaan barang ini','name'=>'garansi_barang','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jelaskan jumlah barang yang dibutuhkan (dalam satuan unit)','name'=>'jml_barang','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
@@ -87,7 +87,7 @@
 			$this->form[] = ['label'=>'Cara Penimbunan / Penyimpanan','name'=>'cara_penyimpanan','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Cara pengoperasian/penggunaan','name'=>'cara_pengoprasian','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Kebutuhan Pelatihan','name'=>'kebutuhan_pelatihan','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Aspek Pengadaan','name'=>'aspek_pengadaan','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Aspek Pengadaan','name'=>'aspek_pengadaan','type'=>'text','validation'=>'required|min:1','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Barang Sejenis','name'=>'barang_sejenis','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Idikasi Konsolidasi','name'=>'idikasi_konsolidasi','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Rencana Konsolidasi','name'=>'rencana_konsolidasi','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
@@ -120,12 +120,12 @@
 			//$this->form[] = ['label'=>'Jelaskan jumlah barang yang dibutuhkan (dalam satuan unit)','name'=>'jml_barang','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Jelaskan kapan barang ini direncanakan akan dimanfaatkan','name'=>'kapan_manfaat_brg','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Jelaskan Pihak yang akan menggunakan/mengelola Barang','name'=>'pihak_pengguna','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jelaskan Total perkiraan waktu pengadaan Barang (termasuk waktu pengiriman barang sampai tiba di lokasi)','name'=>'perkiraan_waktu','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
+			//$this->form[] = ['label'=>'Jelaskan Total perkiraan waktu pengadaan Barang (termasuk waktu pengiriman barang sampai tiba di lokasi)','name'=>'perkiraan_waktu','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Apakah barang ini Terdapat di e-Katalog LKPP','name'=>'ada_ekatalog','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Tinggi;Sedang;Rendah'];
 			//$this->form[] = ['label'=>'Jelaskan Tingkat prioritas kebutuhan Barang. Bila perlu mohon dijelaskan pada pilihan lainnya','name'=>'tingkat_prioritas_brg','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Perkiraan biaya','name'=>'perkiraan_biaya','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Atas perkiraan biaya di atas, jelaskan rincian perhitungannya','name'=>'rincian','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jumlah pegawai dalam unit kerja. (dalam tim pengelolaan manajemen PPK)','name'=>'jml_pegawai','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
+			//$this->form[] = ['label'=>'Jumlah pegawai dalam unit kerja. (dalam tim pengelolaan manajemen PPK)','name'=>'jml_pegawai','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Apakah PPK dibantu oleh Tim atau Tenaga Ahli. Jelaskan pada kotak "Lainnya"','name'=>'ada_team_ahli','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Tinggi;Sedang;Rendah'];
 			//$this->form[] = ['label'=>'Tingkat beban tugas dan tanggung jawab pegawai dalam melaksanakan tugas dan fungsi Tim Pengelolaan Manajemen PPK','name'=>'tingkat_beban_tugas','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
 			//$this->form[] = ['label'=>'Apakah Jumlah barang yang telah tersedia/dimiliki/dikuasai saat ini sudah dapat memenuhi kebutuhan pada unit kerja PPK saat ini','name'=>'ket_jml_barang_tersedia','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
@@ -135,11 +135,11 @@
 			//$this->form[] = ['label'=>'Jumlah barang (kode barang ini) yang berstatus RUSAK RINGAN','name'=>'jml_barang_rusak','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Jumlah barang (kode barang ini) yang berstatus RUSAK BERAT','name'=>'jml_barang_rusak_berat','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Jelaskan lokasi keberadaan barang terdapat di ruang apa, bagian apa, satker apa','name'=>'lokasi_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jelaskan sumber dana pengadaan barang tersebut pada pengadaan tahun-tahun sebelumnya','name'=>'sumber_dana','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
+			//$this->form[] = ['label'=>'Jelaskan sumber dana pengadaan barang tersebut pada pengadaan tahun-tahun sebelumnya','name'=>'sumber_dana','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Kemudahan memperoleh Barang di pasaran Indonesia sesuai dengan jumlah yang dibutuhkan','name'=>'kemudahan_peroleh_barang','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Banyak;Terbatas'];
 			//$this->form[] = ['label'=>'Terdapat produsen/pelaku usaha yang dinilai mampu dan memenuhi syarat','name'=>'terdapat_produsen','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Apabila terbatas, jelaskan dan sebutkan nama penyedia yang selama memenuhi kebutuhan barang ini','name'=>'keterangan_terbatas','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Kreteria Barang','name'=>'kreteria_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Kreteria Barang','name'=>'kreteria_barang','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Persyaratan Barang memiliki nilai TKDN tertentu. apabila Ya, Pada kotak "Lainnya" jelaskan berapa % paling sedikit TKDN','name'=>'barang_nilai_tkd','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Cara pengiriman dan pengangkutan','name'=>'cara_pengiriman','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Cara Pemasangan','name'=>'cara_pemasangan','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
@@ -475,8 +475,9 @@
 				->orderBy('id')
 				->where('id', $idnya)
 				->first();
+
+			// dd($dt);
 			
-			// dd($dt['laporan']['data']);
 			// dd(\Carbon\Carbon::now()->diffForHumans());
 
 			if ($dt['laporan']['data'] == null) {

@@ -141,12 +141,12 @@
                 <tr>
                     <td class="nomor">11.</td>
                     <td class="pertanyaan">Jelaskan kriteria INDIKATOR KINERJA/SPESIFIKASI KINERJA yang dibutuhkan untuk pengadaan barang ini</td>
-                    <td>{{$row->kreteria}}</td>
+                    <td>{!! nl2br(str_replace(" ", " &nbsp;", $row->kreteria)) !!}</td>
                 </tr>
                 <tr>
                     <td class="nomor">12.</td>
                     <td class="pertanyaan">Jelaskan fungsi/kegunaan barang tersebut</td>
-                    <td>{{$row->fungsi_barang}}</td>
+                    <td>{!! nl2br(str_replace(" ", " &nbsp;", $row->fungsi_barang)) !!}</td>
                 </tr>
                 <tr>
                     <td class="nomor">13.</td>
@@ -172,7 +172,7 @@
                 <tr>
                     <td class="nomor">17.</td>
                     <td class="pertanyaan">Jelaskan Pihak yang akan menggunakan/mengelola Barang</td>
-                    <td>{{$row->ihak_pengguna}}</td>
+                    <td>{{$row->pihak_pengguna}}</td>
                 </tr>
                 <tr>
                     <td class="nomor">18.</td>
@@ -193,7 +193,7 @@
                 <tr>
                     <td class="nomor">21.</td>
                     <td class="pertanyaan">Perkiraan biaya. </td>
-                    <td>{{$row->perkiraan_biaya}}</td>
+                    <td>Rp {{ number_format($row->perkiraan_biaya)}}</td>
                 </tr>
                 <tr>
                     <td class="nomor">22.</td>

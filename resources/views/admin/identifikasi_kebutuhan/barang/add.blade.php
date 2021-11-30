@@ -1,7 +1,6 @@
 @extends('crudbooster::admin_template')
 @section('content')
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css"/>
-
 <style>
     .select2-container--default .select2-selection--single {
         border-radius: 0px !important
@@ -24,7 +23,6 @@
     .spin {
         display: none;
     }
-
 </style>
 
 <p><a title='Return' href="{{ crudbooster::adminPath('identifikasi-kebutuhan-barang') }}"><i class='fa fa-chevron-circle-left '></i>

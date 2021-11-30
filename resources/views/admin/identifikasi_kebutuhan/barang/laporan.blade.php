@@ -21,7 +21,7 @@
         padding: 1px 2px;
         font-size: 11px;
         vertical-align: top;
-        word-wrap: break-word;
+        /* word-wrap: break-word; */
     }
     .absen th {
         /*background-color: #4CAF50;
@@ -250,12 +250,12 @@
     <tr>
         <td class="nomor">11.</td>
         <td class="pertanyaan">Jelaskan kriteria INDIKATOR KINERJA/SPESIFIKASI KINERJA yang dibutuhkan untuk pengadaan barang ini</td>
-        <td>{{$laporan['data']->kreteria}}</td>
+        <td>{!! nl2br(str_replace(" ", " &nbsp;", $laporan['data']->kreteria)) !!}</td>
     </tr>
     <tr>
         <td class="nomor">12.</td>
         <td class="pertanyaan">Jelaskan fungsi/kegunaan barang tersebut</td>
-        <td>{{$laporan['data']->fungsi_barang}}</td>
+        <td>{!! nl2br(str_replace(" ", " &nbsp;", $laporan['data']->fungsi_barang)) !!}</td>
     </tr>
     <tr>
         <td class="nomor">13.</td>
@@ -281,7 +281,7 @@
     <tr>
         <td class="nomor">17.</td>
         <td class="pertanyaan">Jelaskan Pihak yang akan menggunakan/mengelola Barang</td>
-        <td>{{$laporan['data']->ihak_pengguna}}</td>
+        <td>{{$laporan['data']->pihak_pengguna}}</td>
     </tr>
     <tr>
         <td class="nomor">18.</td>
@@ -302,7 +302,7 @@
     <tr>
         <td class="nomor">21.</td>
         <td class="pertanyaan">Perkiraan biaya. </td>
-        <td>{{$laporan['data']->perkiraan_biaya}}</td>
+        <td>Rp{{ number_format($laporan['data']->perkiraan_biaya,2) }}</td>
     </tr>
     <tr>
         <td class="nomor">22.</td>
