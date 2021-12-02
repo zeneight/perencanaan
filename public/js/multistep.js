@@ -38,21 +38,41 @@ function msf_btn_next() {
 
     for (i = 0; i < msf_fs_i_count; ++i) {
         var msf_input_s = msf_fs.querySelectorAll("input")[i];
-        if (msf_input_s.getAttribute("type") === "button") {
+        if (msf_input_s.getAttribute("type") === "button" || !msf_input_s.hasAttribute("required")) {
             // nothing happens
         } else {
             if (msf_input_s.value === "") {
-                // msf_input_s.style.backgroundColor = "pink";
-                msf_val = true;
+                msf_input_s.style.borderColor = "red";
+                msf_val = false;
             } else {
                 if (msf_val === false) {} else {
                     msf_val = true;
-                    msf_input_s.style.backgroundColor = "white";
+                    msf_input_s.style.borderColor = "gray";
                 }
             }
         };
     };
-    if (msf_val === true) {
+
+    var msf_val2 = true;
+    var msf_fs_i_count_tarea = msf_fs.querySelectorAll("textarea").length;
+    for (i = 0; i < msf_fs_i_count_tarea; ++i) {
+        var msf_tarea_s = msf_fs.querySelectorAll("textarea")[i];
+        if(!msf_tarea_s.hasAttribute("required")) {
+            // nothing
+        } else {
+            if (msf_tarea_s.value === "") {
+                msf_tarea_s.style.borderColor = "red";
+                msf_val2 = false;
+            } else {
+                if (msf_val2 === false) {} else {
+                    msf_val2 = true;
+                    msf_tarea_s.style.borderColor = "gray";
+                }
+            }
+        };
+    };
+
+    if (msf_val === true && msf_val2 === true) {
         // goes to the next step
         var selection = msf_getFsTag[msf_form_nr];
         selection.className = "msf_hide";
